@@ -33,8 +33,6 @@ while state:
   print('Your password is: ' + str(display_password))
   
   is_pass_ok = input(str('Are you satisfied with this password. If yes enter Yes If no, enter No then please supply password: '))
-  # break
-  
   
   while True:
     if is_pass_ok == 'Yes':
@@ -55,8 +53,7 @@ while state:
         else:
           print('Your password is less than 7')
           user_password = input(str('Enter password greater than or equal to 7: '))
-          
-          
+                   
   new_employee = input(str('Would you like to enter a new employee? Yes or No: '))
   if (new_employee == 'No'):
     state = False
