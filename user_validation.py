@@ -24,7 +24,7 @@ def generate_employee_password(employee_details):
 state = True
 # dict to store user data
 users_data = {}
-user_data_key = 1
+user_key = 1
 
 while state:
   user_info = get_employee_details()
@@ -33,13 +33,13 @@ while state:
   print('Your password is: ' + str(display_password))
   
   is_pass_ok = input(str('Are you satisfied with this password. If yes enter Yes If no, enter No then please supply password: '))
-  break
+  # break
   
   
   while True:
     if is_pass_ok == 'Yes':
       user_info.append(display_password)
-      users_data[user_data_key] = user_info
+      users_data[user_key] = user_info
       break
       
     else:
