@@ -1,0 +1,8 @@
+Python First Task: Create Basic Calculator for Area of a Circle
+
+Write a Python program which accepts the radius of a circle from the user and computes the area.
+
+This tasks is worth 2 points.
+
+
+Deadline: 12/04/2020 01:00 PM
