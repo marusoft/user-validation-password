@@ -22,10 +22,9 @@ def generate_employee_password(employee_details):
 
 
 state = True
-container = []
 # dict to store user data
-# user_data = {}
-# initial_user_key = 1
+users_data = {}
+user_data_key = 1
 
 while state:
   user_info = get_employee_details()
@@ -34,31 +33,25 @@ while state:
   print('Your password is: ' + str(display_password))
   
   is_pass_ok = input(str('Are you satisfied with this password. If yes enter Yes If no, enter No then please supply password: '))
+  break
   
-  pass_loop = True
   
-  while pass_loop:
+  while True:
     if is_pass_ok == 'Yes':
       user_info.append(display_password)
-      container.append(user_info)
-      # user_data.get(user_info)
+      users_data[user_data_key] = user_info
+      break
       
-      pass_loop = False
     else:
       user_password = input(str('Enter password greater than or equal to 7: '))
-      
-      pass_len = True
-      
-      while pass_len:
+      break
+
+      while True:
         if len(user_password) >= 7:
           user_info.append(user_password)
-          container.append(user_info)
+          users_data[user_data_key] = user_info
+          break
           
-          # user_data.append(user_info)
-          
-          pass_len = False
-          
-          pass_loop = False
         else:
           print('Your password is less than 7')
           user_password = input(str('Enter password greater than or equal to 7: '))
@@ -67,8 +60,9 @@ while state:
   new_employee = input(str('Would you like to enter a new employee? Yes or No: '))
   if (new_employee == 'No'):
     state = False
-    for item in container:
-      print(item)
+    for employee in users_data:
+      print(users_data.get(employee))
         
   else:
     state = True
+    user_key = user_key + 1
